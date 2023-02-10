@@ -1,0 +1,224 @@
+{
+ "creation": "2020-02-13 21:52:59.121878",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "section_preferences",
+  "no_letter_head",
+  "letter_head",
+  "column_break_8",
+  "no_ageing",
+  "section_schedule",
+  "html_schedule",
+  "enable_schedule",
+  "schedule",
+  "section_manual",
+  "send_html",
+  "from_date_for_all_customers",
+  "to_date_for_all_customers",
+  "send_customer_statements",
+  "enqueue_sending_statements",
+  "column_break_14",
+  "preview_html",
+  "customer",
+  "from_date",
+  "to_date",
+  "preview",
+  "send_email",
+  "section_recipient",
+  "get_customer_emails",
+  "recipients"
+ ],
+ "fields": [
+  {
+   "fieldname": "send_customer_statements",
+   "fieldtype": "Button",
+   "label": "Send All Customer Statements"
+  },
+  {
+   "fieldname": "section_recipient",
+   "fieldtype": "Section Break",
+   "label": "Recipients Preview"
+  },
+  {
+   "fieldname": "section_schedule",
+   "fieldtype": "Section Break",
+   "label": "Scheduled Sending"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_schedule",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Enable Scheduled Sending"
+  },
+  {
+   "depends_on": "eval: doc.enable_schedule==1",
+   "fieldname": "schedule",
+   "fieldtype": "Select",
+   "label": "Schedule",
+   "options": "Last day of calendar month\nEvery 25th day of the month"
+  },
+  {
+   "fieldname": "section_manual",
+   "fieldtype": "Section Break",
+   "label": "Manual Sending"
+  },
+  {
+   "fieldname": "get_customer_emails",
+   "fieldtype": "Button",
+   "label": "Refresh Customer Preview"
+  },
+  {
+   "description": "The list of active customers below shows who will receive statements when this utility is run. You can tick the \"Disable Sending of Customer Statements\" checkbox on the Customer record to skip sending Statements to a particular customer",
+   "fieldname": "recipients",
+   "fieldtype": "Table",
+   "label": "Customers",
+   "options": "Customer Statements Sender Email"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_preferences",
+   "fieldtype": "Section Break",
+   "label": "Preferences"
+  },
+  {
+   "depends_on": "eval: doc.no_letter_head==0",
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "default": "0",
+   "description": "Check this box to hide the Letterhead. If unchecked, your company's default letterhead will be used, or the letterhead defined below",
+   "fieldname": "no_letter_head",
+   "fieldtype": "Check",
+   "label": "No Letter Head"
+  },
+  {
+   "default": "0",
+   "description": "Check this box to hide the Ageing/Accounts Receivable Summary table shown below the statement",
+   "fieldname": "no_ageing",
+   "fieldtype": "Check",
+   "label": "No Ageing Summary"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preview_html",
+   "fieldtype": "HTML",
+   "options": "<p class=\"help-box small text-muted\">Preview or Print Customer Statement for Customer:</p>"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "preview",
+   "fieldtype": "Button",
+   "label": "Preview or Print"
+  },
+  {
+   "fieldname": "send_html",
+   "fieldtype": "HTML",
+   "options": "<p class=\"help-box small text-muted\"> Send all Customer Statements, for the current month to date, to Customers Now</p>"
+  },
+  {
+   "fieldname": "html_schedule",
+   "fieldtype": "HTML",
+   "options": "<p class=\"help-box small text-muted\"> Feature coming soon </p>"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_date_for_all_customers",
+   "fieldtype": "Date",
+   "label": "From Date for all customers"
+  },
+  {
+   "default": "Today",
+   "fieldname": "to_date_for_all_customers",
+   "fieldtype": "Date",
+   "label": "To Date for all customers"
+  },
+  {
+   "fieldname": "enqueue_sending_statements",
+   "fieldtype": "Button",
+   "label": "Enqueue Sending Statements"
+  },
+  {
+   "fieldname": "send_email",
+   "fieldtype": "Button",
+   "label": "Send email"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2021-04-24 20:22:09.754824",
+ "modified_by": "Administrator",
+ "module": "Customer Statements",
+ "name": "Customer Statements Sender",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

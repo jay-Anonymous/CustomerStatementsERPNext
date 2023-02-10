@@ -1,0 +1,63 @@
+{
+ "creation": "2020-02-13 21:51:18.298928",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "contact",
+  "email",
+  "send_statement"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email Address",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "columns": 4,
+   "fieldname": "send_statement",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Send Statement",
+   "options": "Yes\nNo (Disabled for this customer)\nNo (No email address on record)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-04-15 22:47:20.138219",
+ "modified_by": "Administrator",
+ "module": "Customer Statements",
+ "name": "Customer Statements Sender Email",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
